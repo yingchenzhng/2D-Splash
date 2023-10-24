@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <title>Splash Page</title>
+    <style>
+        /* Style the button */
+        #next-page-button {
+            position: fixed;
+            bottom: 10px; /* Adjust the distance from the bottom */
+            right: 10px;  /* Adjust the distance from the right */
+            z-index: 2; /* Ensure the button is on top */
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="images/splash.gif" alt="bg-gif" id="gif">
+        <img src="images/bg.jpg" alt="Full-Screen Image" class="bg1">
+        <a href="landing.html" id="next-page-link"></a>
+    </div>
+
+    <img src="images/name.png" id="fullscreen-image">
+
+    <audio id="myAudio" controls>
+        <source src="audio/record.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Play button -->
+    <button id="next-page-button">MUSIC</button>
+
+    <script>
+        // Get the audio element and the play button
+        const audio = document.getElementById('myAudio');
+        const playButton = document.getElementById('next-page-button');
+
+        // Add a click event listener to the button
+        playButton.addEventListener('click', function() {
+            // Check if the audio is paused, and play or pause accordingly
+            if (audio.paused) {
+                audio.play();
+                playButton.textContent = 'PAUSE';
+            } else {
+                audio.pause();
+                playButton.textContent = 'PLAY';
+            }
+        });
+    </script>
+</body>
+<script src="script.js"></script>
+</html>
